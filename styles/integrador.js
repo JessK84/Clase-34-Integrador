@@ -21,7 +21,7 @@
 //       - total (suma de subtotales)
 //       - si abona con tarjeta, cantidad de cuotas y monto de cada cuota a pagar
 
-
+// Saludo de bienvenida y preguntar el nombre de la clienta
 let nombre = prompt("Bienvenida a Ada Lovelace, ¿cuál es su nombre?");
 const tienda = "Ada Lovelace";
 const precio2 = 1340;
@@ -33,28 +33,25 @@ const compra1 = "plancha";
 let tarjeta = "";
 let codigoDescuento ="Ada2020";
 
-
-
+//    Mostrarle los productos en promoción (2 productos) // En este caso el cliente rechaza el producto1 y producto2 o, rechaza el producto1 y compra el prodcuto2
 producto1 = prompt("Tenemos en promoción los siguientes productos: \n1. Lavarropas \n2. Plancha\n¿Desea llevar el lavarropas?");
 if (producto1 === "no"){
     producto2 = prompt("¿Desea llevar la plancha?");
     if (producto2 === "no") {
-    alert("Gracias por su tiempo lo esperamos nuevamente" );
+    alert(`Gracias por su tiempo lo esperamos nuevamente en ${tienda}` );
 }    if (producto2 === "si") {
     unidades = Number(prompt("¿Cuántas unidades?"));
     total = precio2 * unidades;
     alert(`El precio por unidad es$${precio2}.
     El precio total es: $${total}`);
-    tarjeta = confirm("Desea pagar con tarjeta de crédito?");
-}   if (tarjeta === true || tarjeta === false) {
-    cuotas = Number(prompt("¿En cuántas cuotas?\n3 \n6 \n12"));
-    if (cuotas === 3) {
+    cuotas = Number(prompt("¿Va a con tarjerta de crédito? Puede hacerlo en:\n3 con un 5% de recargo \n6 con un 10% de recargo \n12 con un 25 % de recargo"));
+}   if (cuotas === 3) {
         montoCuota = (total /3) * 1.05;
         alert(`El monto en 3 cuotas es: $${montoCuota}`)
-    }  else if (cuotas === 6) {
+    }   if (cuotas === 6) {
         montoCuota = (total /6) * 1.10;
-        alert(`El monto en 6cuotas es: $${montoCuota}`)
-    }  else  {
+        alert(`El monto en 6 cuotas es: $${montoCuota}`)
+    }  else if (cuotas === 12) {
         montoCuota = (total /12) * 1.25;
         alert(`El monto en 12 cuotas es: $${montoCuota}`) 
         }   
@@ -63,23 +60,24 @@ if (producto1 === "no"){
     -Abona con tarjeta de crédito en ${cuotas} cuotas.
     -El monto de la cuota es: ${montoCuota}
     ¿Tiene código de descuento?`);
-    } if  (codigo === true) {
+    if  (codigo === true) {
         codigoDescuento = prompt("Ingrese el código del descuento");
     } if (codigoDescuento === "Ada2020") {
         descuento = total / 1.25;
-        cuotasDescuento = descuento / cuotas;
-        alert(`El código ingresado es el correcto: 
+        cuotasDescuento = descuento / cuotas;    // Código de descuento
+        alert(`El código ingresado es correcto: 
         -El monto total con el código de desuento aplicado es: $${descuento}
         -Abona con tarjeta de crédito en ${cuotas} cuotas.
         -El monto de la cuota es: ${cuotasDescuento}
-        Gracias por elegirnos.
-        `);
+        Gracias por a ${tienda}`);
         } else {
-            alert(`El código ingresado es incorrecto
-            Gracias por su compra, lo esperamos nuevamente`)
+            alert(`
+            El código ingresado es incorrecto
+            Gracias por su compra, lo esperamos nuevamente en
+            ${tienda}`)
         }
     }
-
+// En este caso el cliente rechaza el producto1 y producto2 o, compra el producto 1 y rechaza el producto2
 
 if (producto1 === "si" ){
     unidades = Number(prompt("¿Cuántas unidades?"));
@@ -94,67 +92,43 @@ if (producto1 === "si" ){
     El precio total es: $${total1}`);
     totalFinal = total + total1;
     alert(`El monto total de la compra es $${totalFinal}`);
-    tarjeta = confirm("Desea pagar con tarjeta de crédito?");
-}   if (tarjeta === true || tarjeta === false) {
-    cuotas = Number(prompt("¿En cuántas cuotas?\n3 \n6 \n12"));
-    if (cuotas === 3) {
+    cuotas = Number(prompt("¿Va a pagar con tarjeta de crédito? \nPuede pagar en:\n3 con un 5% de recargo \n6 con un 10% de recargo \n12 con un 25 % de recargo"));//       - si abona con tarjeta, cantidad de cuotas y monto de cada cuota a pagar
+}   if (cuotas === 3) {
         montoCuota = (total /3) * 1.05;
         alert(`El monto en 3 cuotas es: $${montoCuota}`)
     } else if (cuotas === 6) {
         montoCuota = (total /6) * 1.10;
         alert(`El monto en 6 cuotas es: $${montoCuota}`)
-    } else  {
+    } else if (cuotas === 12) {
         montoCuota = (total /12) * 1.25;
         alert(`El monto en 12 cuotas es: $${montoCuota}`) 
         }
-codigo = confirm(`Detalle de la compra: 
--${unidades1} ${compra1}, por un monto total de $${total1}.-
--${unidades} ${compra}, por un monto total de $${total}.-
--El monto total es: $${totalFinal}.-
--Abona con tarjeta de crédito en ${cuotas} cuotas.
--El monto de la cuota es: ${montoCuota}
-¿Tiene código de descuento?`);
-} if  (codigo === true) {
+    codigo = confirm(`Detalle de la compra: 
+    -${unidades1} ${compra1}, por un monto total de $${total1}.-
+    -${unidades} ${compra}, por un monto total de $${total}.-
+    -El monto total es: $${totalFinal}.-
+    -Abona con tarjeta de crédito en ${cuotas} cuotas.
+    -El monto de la cuota es: ${montoCuota}
+    ¿Tiene código de descuento?`);
+     if  (codigo === true) {
     codigoDescuento = prompt("Ingrese el código del descuento");
-} if (codigoDescuento === "Ada2020") {
+    // Código de descuento
+     if (codigoDescuento === "Ada2020") { 
     descuento = totalFinal / 1.25;
     cuotasDescuento = descuento / cuotas;
-    alert(`El código ingresado es el correcto: 
-    -El monto total con el código de desuento aplicado es: $${descuento}
+    alert(`El código ingresado es correcto: 
+    -El monto total con desuento aplicado es: $${descuento}
     -Abona con tarjeta de crédito en ${cuotas} cuotas.
     -El monto de la cuota es: ${cuotasDescuento}
-    Gracias por elegirnos.
+    Gracias por elegir a ${tienda}.
     `);
     } else {
-        alert(`El código ingresado es incorrecto
-        Gracias por su compra, lo esperamos nuevamente`)
+        alert(`
+        El código ingresado es incorrecto
+        Gracias por su compra, lo esperamos nuevamente en
+        ${tienda}`)
     }
+     }
 }
 
 
-
-
-
-// ❗ Se requiere definir variables para los siguientes valores (para poder utilizarlas luego)
-
-// Nombre de la tienda
-// Nombre de producto 1
-// Nombre de producto 2
-// Precio de producto 1
-// Precio de producto 2
-// Código de descuento
-// Valor de descuento
-
-// heavy_check_mark Todos los valores y mensajes que se requieran son libres (pueden poner cualquier cosa)
-
-
-// unlock No es requerido validar los datos que se ingresan, por ejemplo, si en vez de ingresar una cantidad de un producto se ingresa un dato no válido, como una palabra
-
-
-// +1 Tips, consejos y buenas prácticas:
-// gear Encarar un punto a la vez, probarlo bien, y cuando esté funcionando y cumpla con lo necesario, seguir adelante
-// dromedary_camel Utilizar buenos nombres de variables y camelCase
-// recycle Poner todo lo que se pueda dentro de variables, y reutilizarlas
-// memo Espaciar los bloques de código en secciones y poner comentarios para que sea más legible
-// mag_right Si tenemos algún problema, usar la consola para inspeccionar los valores de las variables
-// twisted_rightwards_arrows Probar bien todos los caminos                                                                
