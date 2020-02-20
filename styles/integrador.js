@@ -38,7 +38,7 @@ producto1 = prompt("Tenemos en promoción los siguientes productos: \n1. Lavarro
 if (producto1 === "no"){
     producto2 = prompt("¿Desea llevar la plancha?");
     if (producto2 === "no") {
-    alert(`Gracias por su tiempo lo esperamos nuevamente en ${tienda}` );
+    alert(`Gracias por su tiempo lo esperamos nuevamente en ${tienda}`+`\n${nombre}`);
 }    if (producto2 === "si") {
     unidades = Number(prompt("¿Cuántas unidades?"));
     total = precio2 * unidades;
@@ -65,11 +65,11 @@ if (producto1 === "no"){
     } if (codigoDescuento === "Ada2020") {
         descuento = total / 1.25;
         cuotasDescuento = descuento / cuotas;    // Código de descuento
-        alert(`El código ingresado es correcto: 
+        alert(`${nombre}`+`\nEl código ingresado es correcto: 
         -El monto total con el código de desuento aplicado es: $${descuento}
         -Abona con tarjeta de crédito en ${cuotas} cuotas.
         -El monto de la cuota es: ${cuotasDescuento}
-        Gracias por a ${tienda}`);
+        Gracias por elegir a ${tienda}`);
         } else {
             alert(`
             El código ingresado es incorrecto
@@ -116,7 +116,7 @@ if (producto1 === "si" ){
      if (codigoDescuento === "Ada2020") { 
     descuento = totalFinal / 1.25;
     cuotasDescuento = descuento / cuotas;
-    alert(`El código ingresado es correcto: 
+    alert(`${nombre}:`+`\nEl código ingresado es correcto: 
     -El monto total con desuento aplicado es: $${descuento}
     -Abona con tarjeta de crédito en ${cuotas} cuotas.
     -El monto de la cuota es: ${cuotasDescuento}
