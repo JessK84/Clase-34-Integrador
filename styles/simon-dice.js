@@ -12,50 +12,73 @@
 
 // Felicitaciones! Has ganado!
 
-// const colores = prompt("Simón dice: azul, verde, amarillo, azul, verde.\nVamos a probar tu memoria.\n¿Estás listo?");
+let color1 = Math.round(Math.random() * 3);
+let color2 = Math.round(Math.random() * 3);
+let color3 = Math.round(Math.random() * 3);
+let color4 = Math.round(Math.random() * 3);
+let color5 = Math.round(Math.random() * 3);
+
+if (color1 === 0) {
+    color1 = "rojo"
+} else if (color1 === 1) {
+    color1 = "azul"
+} else if (color1 === 2) {
+    color1 = "amarillo"
+} else if (color1 === 3) {
+    color1 = "verde"
+}
+
+if (color2 === 0) {
+    color2 = "rojo"
+} else if (color2 === 1) {
+    color2 = "azul"
+} else if (color2 === 2) {
+    color2 = "amarillo"
+} else if (color2 === 3) {
+    color2 = "verde"
+}
+
+if (color3 === 0) {
+    color3 = "rojo"
+} else if (color3 === 1) {
+    color3 = "azul"
+} else if (color3 === 2) {
+    color3 = "amarillo"
+} else if (color3 === 3) {
+    color3 = "verde"
+}
+
+if (color4 === 0) {
+    color4 = "rojo"
+} else if (color4 === 1) {
+    color4 = "azul"
+} else if (color4 === 2) {
+    color4 = "amarillo"
+} else if (color4 === 3) {
+    color4 = "verde"
+}
+
+if (color5 === 0) {
+    color5 = "rojo"
+} else if (color5 === 1) {
+    color5 = "azul"
+} else if (color5 === 2) {
+    color5 = "amarillo"
+} else if (color5 === 3) {
+    color5 = "verde"
+}
 
 
+alert (`Simón dice: ${color1}, ${color2}, ${color3}, ${color4}, ${color5}.`)
 
-const random =  Math.ceil(Math.random() * 5);
-const colores = 1 === "rojo" && 2 === "azul" && 3 === "verde" && 4 === "amarillo";
+const primerColor = prompt(`Ingrese el primer color:`)
+const segundoColor = prompt(`Ingrese el segundo color:`)
+const tercerColor = prompt(`Ingrese el tercer color:`)
+const cuartoColor = prompt(`Ingrese el cuarto color:`)
+const quintoColor = prompt(`Ingrese el quinto color:`)
 
-
- prompt("Simón dice: " + (random === colores));
-// let mensaje = ("Los colores son:  " + random);
-
-// if ( colores === "si"){
-//     color1= prompt("Vamos a probar tu memoria, decime cual es el color 1");
-//     if (color1 !== "azul") {
-//         alert("Lo siento no podemos continuar")
-//     }
-// } 
-// if (color1 === "azul" ){
-//     alert("Acertaste, vas bien")
-//     color2 = prompt("Vamos a probar tu memoria, decime cual es el color 2");
-// }
-// if (color2 === "verde" ) {
-//     alert("Acertaste, vas bien")
-//     color3 = prompt("Vamos a probar tu memoria, decime cual es el color 3");
-//  if (color2 !== "verde"){
-//     alert("Lo siento no podemos continuar") 
-// }
-// }
-// if (color3 === "amarillo" ) {
-//     alert("Acertaste, vas bien")
-//     color4 = prompt("Vamos a probar tu memoria, decime cual es el color 4");
-// } else {
-//     alert("Lo siento no podemos continuar");
-// }
-// if (color4 === "azul" ) {
-//     alert("Acertaste, vas bien")
-//     color5 = prompt("Vamos a probar tu memoria, decime cual es el color 5");
-// } else {
-//     alert("Lo siento no podemos continuar")
-// }
-// if (color5 === "verde" ) {
-//     alert("Si llegaste hasta acá es por acertaste todo");
-//     alert(mensaje + color1 + color2 + color3 + color4 + color5);
-// } else {
-//     alert("Lo siento no podemos continuar")
-   
-// }
+if ((color1 === primerColor) && (color2 === segundoColor) && (color3 === tercerColor) && (color4 === cuartoColor) && (color5 === quintoColor)){
+    alert(`¡Ganaste!`)
+} else {
+    alert(`Perdiste.`)
+}
